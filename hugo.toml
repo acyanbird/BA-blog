@@ -47,13 +47,16 @@ enableEmoji = true
 #     createIssueManually = true
 #     distractionFreeMode = false
 
+
   [[params.links]]
-    title = "Link"
-    href = "https://github.com/acyanbird"
-#   [[params.links]]
-#     title = "Link2"
-#     href = "https://meik2333.com"
-#     icon = "https://meik2333.com/images/avatar.png"
+    title = "bilibili"
+    href = "https://space.bilibili.com/205319947"
+    icon = "images/bilibili.svg"
+
+  [[params.links]]
+    title = "QQ Group"
+    icon = "images/qq.svg"
+    href = "https://qm.qq.com/q/cXb0hh1uC"
 
 lastmod = true
 [frontmatter]

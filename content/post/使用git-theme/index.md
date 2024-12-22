@@ -5,7 +5,6 @@ draft: false
 author: "acyanbird"
 summary: "使用 github theme构建的方法"
 tags: ["hugo","个人blog"]
-pin: true
 ---
 
 ### 使用 git theme
@@ -73,6 +72,12 @@ ctrl+k 再+v 可以分屏预览
 简简单单初始化……然后上传 blog，注意主题最好按照 sub-module 的方式提交免得出现错误！其实有强制嵌套的办法，我之前还用过是啥我忘了（）  
 
 
+
+
+
+### 添加社交媒体
+
+该说不说这个 [icon 站](https://fontawesome.com/icons/bilibili) 挺好的！我无论如何都要把 b 站弄上去嗷~
 
 ### 代码高亮
 好像代码高亮的程度不够啊……调整一下

@@ -5,7 +5,6 @@ draft: false
 author: "acyanbird"
 summary: "白嫖GitHub与使用VPS的利弊"
 tags: ["blog"]
-pin: true
 ---
 
 ## 事先声明：
