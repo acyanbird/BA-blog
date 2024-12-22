@@ -1,0 +1,66 @@
+baseURL = "/"
+languageCode = "zh-cn"
+title = "Nighthawk's nest"
+theme = "github-style"
+# theme = "github-style-plus"
+pygmentsCodeFences = true
+pygmentsUseClasses = false
+buildDrafts = false
+PygmentsStyle = "tango"
+enableEmoji = true
+
+
+[params]
+  author = "山奈"
+  description = "For the people who are still online."
+  github = "acyanbird"
+  email = "acyanbird@gmail.com"
+  url = "https://acyanbird.tech"
+#   keywords = "blog, google analytics"
+  # rss = true
+  # userStatusEmoji = "😀"
+  favicon = "/images/ava_c.png" #标签页的那个小图标，先不管
+  avatar = "/images/ava_c.png"
+  headerIcon = "/images/ava_c.png"
+  location = "Shenzhen, China"
+  enableGitalk = false
+  enableSearch = true
+
+[outputs]
+  home = ["html", "json"]
+
+[outputFormats.json]
+  mediaType = "application/json"
+  baseName = "index"
+  isPlainText = false
+
+#   [params.gitalk]
+#     clientID = "Your client ID"
+#     clientSecret = "Your client secret"
+#     repo = "repo"
+#     owner = "MeiK2333"
+#     admin = "MeiK2333"
+#     id = "location.pathname"
+#     labels = "gitalk"
+#     perPage = 15
+#     pagerDirection = "last"
+#     createIssueManually = true
+#     distractionFreeMode = false
+
+  [[params.links]]
+    title = "Link"
+    href = "https://github.com/acyanbird"
+#   [[params.links]]
+#     title = "Link2"
+#     href = "https://meik2333.com"
+#     icon = "https://meik2333.com/images/avatar.png"
+
+lastmod = true
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]
+
+# [services]
+#   [services.googleAnalytics]
+#     ID = "UA-123456-789"
+
+
