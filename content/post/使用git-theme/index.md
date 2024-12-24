@@ -103,7 +103,8 @@ acyanbird.tech
 
 ### 使用 gitalk
 这个 blog 推荐的评论系统，根据 [gitalk](https://github.com/gitalk/gitalk/blob/master/readme-cn.md) 的官方教程走一下，申请 APP （之后在 setting - developer setting 里找）然后把参数填写到 hugo.toml 里面  
-
+![  ](image-5.png)
+记得填写你的域名，这种时候本地测试 gitalk 是没法使用的，需要push到网页上才行！
 
 ### 代码高亮
 好像代码高亮的程度不够啊……调整一下
@@ -137,5 +138,5 @@ fn main() {
     println!("Hello World!");
 }
 ```
-![alt text](image.png)
+![alt text](image.png)  
 嗯这样顺眼多了
