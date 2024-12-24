@@ -37,14 +37,14 @@ enableEmoji = true
   [params.gitalk]
     clientID = "Ov23lioPbYI2h4agywvu"
     clientSecret = "ce9bb78db00344b91c6f8c6ed1064a8e2529716b"
-    repo = "BA-blog"
+    repo = "blog-comment"
     owner = "acyanbird"
     admin = "acyanbird"
     id = "location.pathname"
     labels = "gitalk"
     perPage = 15
     pagerDirection = "last"
-    createIssueManually = true
+    createIssueManually = false
     distractionFreeMode = false
 
 
