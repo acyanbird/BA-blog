@@ -71,7 +71,7 @@ ctrl+k 再+v 可以分屏预览
 
 简简单单初始化……然后上传 blog，注意主题最好按照 sub-module 的方式提交免得出现错误！其实有强制嵌套的办法，我之前还用过是啥我忘了（）  
 
-
+然后按照[官网](https://gohugo.io/hosting-and-deployment/hosting-on-github/)的指示一路下行就没有什么问题。值得注意的是，如果你不是使用 g
 
 
 

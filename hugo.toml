@@ -19,9 +19,9 @@ enableEmoji = true
 #   keywords = "blog, google analytics"
   # rss = true
   # userStatusEmoji = "😀"
-  favicon = "/images/ava_c_trans.png" #标签页的那个小图标，先不管
-  avatar = "/images/ava_c.png"
-  headerIcon = "/images/ava_c.png"
+  favicon = "images/ava_c_trans.png" #标签页的那个小图标，先不管
+  avatar = "images/ava_c.png"
+  headerIcon = "images/ava_c.png"
   location = "Shenzhen, China"
   enableGitalk = false
   enableSearch = true
@@ -51,11 +51,11 @@ enableEmoji = true
   [[params.links]]
     title = "bilibili"
     href = "https://space.bilibili.com/205319947"
-    icon = "/images/bilibili.svg"
+    icon = "images/bilibili.svg"
 
   [[params.links]]
     title = "QQ Group"
-    icon = "/images/qq.svg"
+    icon = "images/qq.svg"
     href = "https://qm.qq.com/q/cXb0hh1uC"
 
 lastmod = true
