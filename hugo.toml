@@ -9,6 +9,10 @@ buildDrafts = false
 PygmentsStyle = "tango"
 enableEmoji = true
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [params]
   author = "山奈"
@@ -51,12 +55,17 @@ enableEmoji = true
   [[params.links]]
     title = "bilibili"
     href = "https://space.bilibili.com/205319947"
-    icon = "images/bilibili.svg"
+    icon = "/images/bilibili.svg"
 
   [[params.links]]
     title = "QQ Group"
-    icon = "images/qq.svg"
+    icon = "/images/qq.svg"
     href = "https://qm.qq.com/q/cXb0hh1uC"
+
+    [[params.links]]
+    title = "ebird"
+    href = "https://ebird.org/profile/MjQ3NDIyOQ/world"
+    icon = "/images/ebirdicon.png"
 
 lastmod = true
 [frontmatter]

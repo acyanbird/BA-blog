@@ -80,7 +80,8 @@ ctrl+k 再+v 可以分屏预览
 ```
 在 根目录建立`static/images`，复制粘贴图片  
 然后在 `content/post` 下面新建 images 文件夹，把用到的图片也复制粘贴一份  
-**但是这个问题无法被彻底解决！点进 post 仍然会显示失败！还是使用 <用户名>.github.io 最好！**
+**但是这个问题无法被彻底解决！点进 post 仍然会显示失败！还是使用 <用户名>.github.io 最好！在此之后在 请更改回 /images/<图片名称>**
+
 
 ### 自定义域名
 之前我的两个网站都使用了子域名，现在就用顶点域名吧！反正也是从 GitHub 学生包白嫖滴  
@@ -105,6 +106,9 @@ acyanbird.tech
 这个 blog 推荐的评论系统，根据 [gitalk](https://github.com/gitalk/gitalk/blob/master/readme-cn.md) 的官方教程走一下，申请 APP （之后在 setting - developer setting 里找）然后把参数填写到 hugo.toml 里面  
 ![  ](image-5.png)
 记得填写你的域名，这种时候本地测试 gitalk 是没法使用的，需要push到网页上才行！
+
+如果你开了别的仓库去储存 issue （是的这个评论基于 issue），那么在本站的config里面写上那个仓库的名称。
+
 
 
 ### 代码高亮
@@ -141,3 +145,12 @@ fn main() {
 ```
 ![alt text](image.png)  
 嗯这样顺眼多了
+
+### 其他注意事项
+如果要在 markdown 里面启用 HTML，在站点config也就是 hugo.toml 里加入
+```toml
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+```
