@@ -177,7 +177,7 @@
                         </div>
                       </div>
                     </details-menu>
-                      1333 Words
+                      1419 Words
                     
 
                   </div>
@@ -193,13 +193,13 @@
                       hugo
                     </a>
                     
-                    <a class="muted-link mr-3" href="/tags/%E4%B8%AA%E4%BA%BAblog">
+                    <a class="muted-link mr-3" href="/tags/blog">
                       <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
                         <path fill-rule="evenodd"
                           d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
                         </path>
                       </svg>
-                      个人blog
+                      blog
                     </a>
                     
                     
@@ -238,7 +238,8 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">date</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>{{<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">.Date }}</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">draft</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">false</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">author</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;acyanbird&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">summary</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">summary</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;{{ replace .Name &#34;</span>-<span style="color:#4e9a06">&#34; &#34;</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34; | title }}&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#8f5902;font-style:italic">#自动生成和标题一样的summary，免得显示太长内容，可以手动修改滴</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#8f5902;font-style:italic"># tags: [&#34;&#34;]</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#000">---</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></span></span></code></pre></div><p>新建 post
@@ -276,7 +277,7 @@ ctrl+k 再+v 可以分屏预览<br>
 <p>这个 blog 推荐的评论系统，根据 <a href="https://github.com/gitalk/gitalk/blob/master/readme-cn.md">gitalk</a> 的官方教程走一下，申请 APP （之后在 setting - developer setting 里找）然后把参数填写到 hugo.toml 里面<br>
 <img src="image-5.png" alt="  ">
 记得填写你的域名，这种时候本地测试 gitalk 是没法使用的，需要push到网页上才行！</p>
-<p>如果你开了别的仓库去储存 issue （是的这个评论基于 issue），那么在本站的config里面写上那个仓库的名称。</p>
+<p>如果你开了别的仓库去储存 issue （是的这个评论基于 issue），那么在本站的config里面写上那个仓库的名称。因为可能在本体有些敏感信息要变为 private，所以使用另一个公开仓库存放 issue 是最好滴。</p>
 <h3 id="代码高亮">代码高亮</h3>
 <p>好像代码高亮的程度不够啊……调整一下</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#把pygment给false掉，默认调用chroma效果更好</span>

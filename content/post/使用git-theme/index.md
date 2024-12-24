@@ -4,7 +4,7 @@ date: 2024-12-20T09:40:38+08:00
 draft: false
 author: "acyanbird"
 summary: "使用 github theme构建的方法"
-tags: ["hugo","个人blog"]
+tags: ["hugo","blog"]
 ---
 
 # 使用 git theme
@@ -49,7 +49,8 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: false
 author: "acyanbird"
-summary: ""
+summary: "{{ replace .Name "-" " " | title }}"
+#自动生成和标题一样的summary，免得显示太长内容，可以手动修改滴
 # tags: [""]
 ---
 ```
@@ -107,9 +108,7 @@ acyanbird.tech
 ![  ](image-5.png)
 记得填写你的域名，这种时候本地测试 gitalk 是没法使用的，需要push到网页上才行！
 
-如果你开了别的仓库去储存 issue （是的这个评论基于 issue），那么在本站的config里面写上那个仓库的名称。
-
-
+如果你开了别的仓库去储存 issue （是的这个评论基于 issue），那么在本站的config里面写上那个仓库的名称。因为可能在本体有些敏感信息要变为 private，所以使用另一个公开仓库存放 issue 是最好滴。
 
 ### 代码高亮
 好像代码高亮的程度不够啊……调整一下
