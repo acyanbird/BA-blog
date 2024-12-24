@@ -35,8 +35,8 @@ enableEmoji = true
   isPlainText = false
 
   [params.gitalk]
-    clientID = "Ov23lioPbYI2h4agywvu"
-    clientSecret = "ce9bb78db00344b91c6f8c6ed1064a8e2529716b"
+    clientID = GITALK_CLIENT_ID
+    clientSecret = GITALK_CLIENT_SECRET
     repo = "blog-comment"
     owner = "acyanbird"
     admin = "acyanbird"
