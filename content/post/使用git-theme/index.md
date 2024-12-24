@@ -7,8 +7,8 @@ summary: "使用 github theme构建的方法"
 tags: ["hugo","个人blog"]
 ---
 
-### 使用 git theme
----
+# 使用 git theme
+
 [主题链接](https://github.com/MeiK2333/github-style/tree/master)
 
 找了很多 theme，最后决定直接使用GitHub版本了！
@@ -79,17 +79,31 @@ ctrl+k 再+v 可以分屏预览
   headerIcon = "images/ava_c.png"
 ```
 在 根目录建立`static/images`，复制粘贴图片  
-然后在 `content/post` 下面新建 images 文件夹，把用到的图片也复制粘贴一份
-
-### 使用 gitalk
+然后在 `content/post` 下面新建 images 文件夹，把用到的图片也复制粘贴一份  
+**但是这个问题无法被彻底解决！点进 post 仍然会显示失败！还是使用 <用户名>.github.io 最好！**
 
 ### 自定义域名
 之前我的两个网站都使用了子域名，现在就用顶点域名吧！反正也是从 GitHub 学生包白嫖滴  
 [设置顶级域名](https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)需要使用 A （IPV4）或者 AAAA （IPV6）记录，之前用子域名好像只用个 CNAME 来着？
 
+记得在根目录创建 CNAME 文件夹，里面加上自己的域名比如
+![alt text](image-2.png)
+```
+acyanbird.tech
+```
+毕竟是 action 创建的，需要我们手动添加 CNAME，如果 DNS 解析不成功记得取消掉强制 HTTPS 再尝试一次。www 开头的解析 CNAME 成<用户名>.github.io 我是使用的 Cloudflare 所以还有个坑，在配置的时候要把 proxy 取消掉  
+![](image-3.png)  
+然后才能认证成功。不过在头一次添加域名的时候也需要额外的配置  
+![alt text](image-4.png)  
+这里也注意在认证的时候应该也要去除掉 proxy 状态？忘记惹……有问题找我！
+
 ### 添加社交媒体
 
 该说不说这个 [icon 站](https://fontawesome.com/icons/bilibili) 挺好的！我无论如何都要把 b 站弄上去嗷~
+
+### 使用 gitalk
+这个 blog 推荐的评论系统，根据 [gitalk](https://github.com/gitalk/gitalk/blob/master/readme-cn.md) 的官方教程走一下，申请 APP （之后在 setting - developer setting 里找）然后把参数填写到 hugo.toml 里面  
+
 
 ### 代码高亮
 好像代码高亮的程度不够啊……调整一下

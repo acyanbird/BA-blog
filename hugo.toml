@@ -1,4 +1,4 @@
-baseURL = "https://acyanbird.github.io/BA-blog/"
+baseURL = "https://acyanbird.tech"
 languageCode = "zh-cn"
 title = "Nighthawk's nest"
 theme = "github-style"
@@ -19,11 +19,11 @@ enableEmoji = true
 #   keywords = "blog, google analytics"
   # rss = true
   # userStatusEmoji = "😀"
-  favicon = "images/ava_c_trans.png" #标签页的那个小图标，先不管
-  avatar = "images/ava_c.png"
-  headerIcon = "images/ava_c.png"
+  favicon = "/images/ava_c_trans.png" #标签页的那个小图标，先不管
+  avatar = "/images/ava_c.png"
+  headerIcon = "/images/ava_c.png"
   location = "Shenzhen, China"
-  enableGitalk = false
+  enableGitalk = true
   enableSearch = true
 
 [outputs]
@@ -34,18 +34,18 @@ enableEmoji = true
   baseName = "index"
   isPlainText = false
 
-#   [params.gitalk]
-#     clientID = "Your client ID"
-#     clientSecret = "Your client secret"
-#     repo = "repo"
-#     owner = "MeiK2333"
-#     admin = "MeiK2333"
-#     id = "location.pathname"
-#     labels = "gitalk"
-#     perPage = 15
-#     pagerDirection = "last"
-#     createIssueManually = true
-#     distractionFreeMode = false
+  [params.gitalk]
+    clientID = "Ov23lioPbYI2h4agywvu"
+    clientSecret = "ce9bb78db00344b91c6f8c6ed1064a8e2529716b"
+    repo = "BA-blog"
+    owner = "acyanbird"
+    admin = "acyanbird"
+    id = "location.pathname"
+    labels = "gitalk"
+    perPage = 15
+    pagerDirection = "last"
+    createIssueManually = true
+    distractionFreeMode = false
 
 
   [[params.links]]
