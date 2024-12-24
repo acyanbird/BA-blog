@@ -71,9 +71,21 @@ ctrl+k 再+v 可以分屏预览
 
 简简单单初始化……然后上传 blog，注意主题最好按照 sub-module 的方式提交免得出现错误！其实有强制嵌套的办法，我之前还用过是啥我忘了（）  
 
-然后按照[官网](https://gohugo.io/hosting-and-deployment/hosting-on-github/)的指示一路下行就没有什么问题。值得注意的是，如果你不是使用 g
+然后按照[官网](https://gohugo.io/hosting-and-deployment/hosting-on-github/)的指示一路下行就没有什么问题。值得注意的是，如果你使用的有子目录（比如 example.org/aaa），那可以把 toml 的图片链接设置成相对路径
 
+```toml
+  favicon = "images/ava_c_trans.png" #标签页的那个小图标，先不管
+  avatar = "images/ava_c.png"
+  headerIcon = "images/ava_c.png"
+```
+在 根目录建立`static/images`，复制粘贴图片  
+然后在 `content/post` 下面新建 images 文件夹，把用到的图片也复制粘贴一份
 
+### 使用 gitalk
+
+### 自定义域名
+之前我的两个网站都使用了子域名，现在就用顶点域名吧！反正也是从 GitHub 学生包白嫖滴  
+[设置顶级域名](https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)需要使用 A （IPV4）或者 AAAA （IPV6）记录，之前用子域名好像只用个 CNAME 来着？
 
 ### 添加社交媒体
 

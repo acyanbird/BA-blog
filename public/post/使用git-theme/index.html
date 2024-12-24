@@ -177,7 +177,7 @@
                         </div>
                       </div>
                     </details-menu>
-                      678 Words
+                      882 Words
                     
 
                   </div>
@@ -253,7 +253,16 @@ ctrl+k 再+v 可以分屏预览<br>
 <h3 id="托管到-github-page">托管到 GitHub Page</h3>
 <p>其实应该在 ananke 的时候尝试的……算了已经这样了，按照官方教程走一波！</p>
 <p>简简单单初始化……然后上传 blog，注意主题最好按照 sub-module 的方式提交免得出现错误！其实有强制嵌套的办法，我之前还用过是啥我忘了（）</p>
-<p>然后按照<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">官网</a>的指示一路下行就没有什么问题。值得注意的是，如果你不是使用 g</p>
+<p>然后按照<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">官网</a>的指示一路下行就没有什么问题。值得注意的是，如果你使用的有子目录（比如 example.org/aaa），那可以把 toml 的图片链接设置成相对路径</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>  <span style="color:#000">favicon</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;images/ava_c_trans.png&#34;</span> <span style="color:#8f5902;font-style:italic">#标签页的那个小图标，先不管</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">avatar</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;images/ava_c.png&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">headerIcon</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;images/ava_c.png&#34;</span>
+</span></span></code></pre></div><p>在 根目录建立<code>static/images</code>，复制粘贴图片<br>
+然后在 <code>content/post</code> 下面新建 images 文件夹，把用到的图片也复制粘贴一份</p>
+<h3 id="使用-gitalk">使用 gitalk</h3>
+<h3 id="自定义域名">自定义域名</h3>
+<p>之前我的两个网站都使用了子域名，现在就用顶点域名吧！反正也是从 GitHub 学生包白嫖滴<br>
+<a href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">设置顶级域名</a>需要使用 A （IPV4）或者 AAAA （IPV6）记录，之前用子域名好像只用个 CNAME 来着？</p>
 <h3 id="添加社交媒体">添加社交媒体</h3>
 <p>该说不说这个 <a href="https://fontawesome.com/icons/bilibili">icon 站</a> 挺好的！我无论如何都要把 b 站弄上去嗷~</p>
 <h3 id="代码高亮">代码高亮</h3>
