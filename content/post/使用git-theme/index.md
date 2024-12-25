@@ -70,7 +70,15 @@ ctrl+k 再+v 可以分屏预览
 ### 托管到 GitHub Page
 其实应该在 ananke 的时候尝试的……算了已经这样了，按照官方教程走一波！
 
-简简单单初始化……然后上传 blog，注意主题最好按照 sub-module 的方式提交免得出现错误！其实有强制嵌套的办法，我之前还用过是啥我忘了（）  
+简简单单初始化……然后上传 blog，public 文件夹不用上传，在根目录 .gitignore 里加入
+`public/` 停止追踪 
+```bash
+git rm -r --cached public 
+git add .gitignore
+git commit -m "Stop tracking public folder"  
+```
+
+注意主题最好按照 sub-module 的方式提交免得出现错误！其实有强制嵌套的办法，我之前还用过是啥我忘了（）  
 
 然后按照[官网](https://gohugo.io/hosting-and-deployment/hosting-on-github/)的指示一路下行就没有什么问题。值得注意的是，如果你使用的有子目录（比如 example.org/aaa），那可以把 toml 的图片链接设置成相对路径
 
