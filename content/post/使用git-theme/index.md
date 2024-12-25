@@ -116,7 +116,9 @@ acyanbird.tech
 ![  ](image-5.png)
 记得填写你的域名，这种时候本地测试 gitalk 是没法使用的，需要push到网页上才行！
 
-如果你开了别的仓库去储存 issue （是的这个评论基于 issue），那么在本站的config里面写上那个仓库的名称。因为可能在本体有些敏感信息要变为 private，所以使用另一个公开仓库存放 issue 是最好滴。
+如果你开了别的仓库去储存 issue （是的这个评论基于 issue），那么在本站的config里面写上那个仓库的名称。因为可能在本体有些敏感信息要变为 private，所以使用另一个公开仓库存放 issue 是最好滴。  
+
+如果使用了 gitalk 作为评论模块，在标题中文转码后会有因为label长度大于50，导致 validation 失败的问题，推荐把配置的 id 更改为 `id = "decodeURI(location.pathname)"` 这样能直接打中文作为标题，就不会超过限制啦
 
 ### 代码高亮
 好像代码高亮的程度不够啊……调整一下
