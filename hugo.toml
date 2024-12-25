@@ -48,7 +48,7 @@ enableEmoji = true
     labels = "gitalk"
     perPage = 15
     pagerDirection = "last"
-    createIssueManually = false
+    createIssueManually = true
     distractionFreeMode = false
 
 
