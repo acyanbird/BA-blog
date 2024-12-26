@@ -2,13 +2,13 @@ baseURL = "https://acyanbird.tech/"
 languageCode = "zh-cn"
 title = "Nighthawk's nest"
 theme = "github-style"
-# theme = "github-style-plus"
 pygmentsCodeFences = true
 pygmentsUseClasses = false
 buildDrafts = false
 PygmentsStyle = "tango"
 enableEmoji = true
 
+# 在 md 里面启用 HTML 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -23,7 +23,7 @@ enableEmoji = true
 #   keywords = "blog, google analytics"
   # rss = true
   # userStatusEmoji = "😀"
-  favicon = "/images/ava_c_trans.png" #标签页的那个小图标，先不管
+  favicon = "/images/ava_c_trans.png" #标签页的那个小图标
   avatar = "/images/ava_c.png"
   headerIcon = "/images/ava_c.png"
   location = "Shenzhen, China"
