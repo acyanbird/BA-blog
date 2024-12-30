@@ -16,6 +16,7 @@ she / her / hers<br><br>超级喜欢开源社区的夜鹰一只啊！Linux 桌�
 - [白鼠Cysnies](https://blog.tcea.top)
 - [一粒 qaqland](https://qaq.land)
 - [John Cage](https://coshcage.github.io/)
+- [地瓜先生集](https://dongdigua.github.io/)
 
 
 # 💻Tech Stack

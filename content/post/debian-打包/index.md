@@ -17,4 +17,6 @@ tags: ["打包"]
 在 `/etc/apt/source.list` 里面把 src 的注释取消（看了就知道了）
 
 
+### 实操练习环节 1：修改 grep 软件包
 
+通过 `apt-get source grep` 获得源码包，然后通过 `dpkg-source -x grep_2.12-2.dsc` 解压
