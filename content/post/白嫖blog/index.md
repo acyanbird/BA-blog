@@ -14,6 +14,9 @@ tags: ["blog"]
 如果太难编辑，比如需要自己手动上传图片到图床，再粘贴链接什么的……也不利于持续性的blog写作（一开始觉得没问题总有一天会咆哮很麻烦！）  
 无法私有平台固然不错，但是限制太多，还是把资料掌握在自己手里最好！比如我的CSDN账号是什么来着？   因此又跑回来折腾啦！这次有GitHub作为存档保底，自动集成，VSC 的 markdown 支持 ~~主要是能够复制粘贴图片~~ 顺便搞定一下墙内访问就完事大吉~
 
+### 仅供参考
+可以查看这个[示例配置](https://github.com/acyanbird/acyanbird.github.io)，不过具体配置都在下面贴的很清楚啦！要是有什么结构问题再来看看这个示例站点吧~
+
 ### 太长不看快速上手版
 
 ### 搭建站点
@@ -140,10 +143,108 @@ summary: "{{ replace .Name "-" " " | title }}"
 **Markdown Paste** 此插件主要是提供了直接向 md文章里贴图的功能。  
 ctrl+k 再+v 可以分屏预览  
 ![alt text](image-5.png)  
-Readme 文档的写作格式网上有很多资料，也比较方便入门，在此就不赘述啦！
+Readme 文档的写作格式网上有很多资料，也比较方便入门，在此就不赘述啦！  
+写完之后直接一个 `git add . && git commit -m "更新笔记" && git push` 走起~
 
 ### 上线博客
+我们使用 github Page 服务进行托管，这个主题目前（可能我会修咕咕咕）有个问题，不支持在有子目录的情况下显示头像图片。所以我们需要使用 <用户名>.github.io 的repo。创建这个名字的repo名称，添加这个 repo。
+```bash
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin 你的URL
+git push -u origin main
+```
+之后启动 GitHub Page，这里[官方文档](https://gohugo.io/hosting-and-deployment/hosting-on-github/)写的很清楚了，setting - pages 
+![alt text](image-6.png)
+在根目录创建 .github/workflows 文件夹，创建 hugo.yaml
+```bash
+mkdir -p .github/workflows
+touch hugo.yaml
+```
+照抄一下官方文档就好
+```yaml
+# Sample workflow for building and deploying a Hugo site to GitHub Pages
+name: Deploy Hugo site to Pages
 
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches:
+      - main
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.137.1
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb          
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Install Node.js dependencies
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Build with Hugo
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+          TZ: America/Los_Angeles
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+**顺手优化**： 这个选做，这样发布是不需要 public 文件夹的，我们可以让git忽略这个文件夹，来加快每次上传的速度。在根目录下创建 .gitignore 文件，加入 public/ ，如果之前 add 过这个文件夹那么在根目录下 `git rm -r --cached public`，再提交（git add . && git commit -m "commit message"）  
+到此你的
 ### enable 评论
-这个主题适配了 [gitalk](https://github.com/gitalk/gitalk) 组建，所以就使用这个啦~ 因为需要 callback URL 所以需要上线之后才能使用
+这个主题适配了 [gitalk](https://github.com/gitalk/gitalk) 组建，所以就使用这个啦~ 因为需要 callback URL 所以需要上线之后才能使用。
