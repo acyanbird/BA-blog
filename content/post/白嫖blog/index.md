@@ -3,7 +3,7 @@ title: "为什么要白嫖blog"
 date: 2024-12-22T22:25:59+08:00
 draft: true
 author: "acyanbird"
-summary: "白嫖GitHub与使用VPS的利弊"
+summary: "白嫖GitHub与使用VPS的利弊，以及如何搭建"
 tags: ["blog"]
 ---
 
@@ -118,4 +118,32 @@ lastmod = true
 #     ID = "UA-123456-789"
 ```
 将images放置在 static下，就像 static/images/image.png 这样，hugo 才能够索引到图片。这个主题接受 content 下的一个 readme.md 以及 content/post/ 文件夹下的 md 文件（所以之前创建的 posts 文件夹要重命名）。  
-为了更整齐地归纳 post 里面的图片，我选择给每一个 post 创建一个文件夹。
+为了更整齐地归纳 post 里面的图片，我选择给每一个 post 创建一个文件夹。  
+在 archetypes 文件夹下再建立模版文件
+![alt text](image-4.png)
+```yaml
+---
+title: "{{ replace .Name "-" " " | title }}"
+date: {{ .Date }}
+draft: false
+author: "acyanbird"
+# 显示在首页的总结
+summary: "{{ replace .Name "-" " " | title }}"
+# tags: [""]
+---
+```
+
+### 添加 post
+由于我们使用了 archetype，所以可以用 `hugo new post/[你的题目] --kind git` 初始化一个blog，这样之后的图片放在这个文件夹下就可以啦~  
+在我个人感觉里，有一个能够方便进行写作的工具是很重要的，今天在这里推荐 VS Code 加上几个插件：  
+**Markdown Shotcuts** 此插件主要是提供了粗体、斜体、行内代码、代码块的快捷键。    
+**Markdown Paste** 此插件主要是提供了直接向 md文章里贴图的功能。  
+ctrl+k 再+v 可以分屏预览  
+![alt text](image-5.png)  
+Readme 文档的写作格式网上有很多资料，也比较方便入门，在此就不赘述啦！
+
+### 上线博客
+
+
+### enable 评论
+这个主题适配了 [gitalk](https://github.com/gitalk/gitalk) 组建，所以就使用这个啦~ 因为需要 callback URL 所以需要上线之后才能使用
