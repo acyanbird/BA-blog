@@ -1,7 +1,7 @@
 ---
 title: "为什么要白嫖blog"
 date: 2024-12-22T22:25:59+08:00
-draft: true
+draft: false
 author: "acyanbird"
 summary: "白嫖GitHub与使用VPS的利弊，以及如何搭建"
 tags: ["blog"]
@@ -245,6 +245,7 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 **顺手优化**： 这个选做，这样发布是不需要 public 文件夹的，我们可以让git忽略这个文件夹，来加快每次上传的速度。在根目录下创建 .gitignore 文件，加入 public/ ，如果之前 add 过这个文件夹那么在根目录下 `git rm -r --cached public`，再提交（git add . && git commit -m "commit message"）  
-到此你的
+到此你的 blog 已经可以上线并访问啦！耶！不过还有能够改进的地方，如果还有兴趣就向下看看吧~
+### 个性化域名&墙内访问
 ### enable 评论
 这个主题适配了 [gitalk](https://github.com/gitalk/gitalk) 组建，所以就使用这个啦~ 因为需要 callback URL 所以需要上线之后才能使用。
