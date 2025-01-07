@@ -1,4 +1,4 @@
-baseURL = "https://acyanbird.tech/"
+baseURL = "https://acyanbird.github.io/blog-example/"
 languageCode = "zh-cn"
 title = "Nighthawk's nest"
 theme = "github-style"
@@ -38,6 +38,12 @@ enableEmoji = true
   baseName = "index"
   isPlainText = false
 
+
+lastmod = true
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]
+
   [params.gitalk]
     clientID = "Ov23lioPbYI2h4agywvu"
     clientSecret = "861dba155af8f908bde790036cfb502ccb6adb1b"
@@ -67,9 +73,6 @@ enableEmoji = true
     href = "https://ebird.org/profile/MjQ3NDIyOQ/world"
     icon = "/images/ebirdicon.png"
 
-lastmod = true
-[frontmatter]
-  lastmod = ["lastmod", ":fileModTime", ":default"]
 
 # [services]
 #   [services.googleAnalytics]

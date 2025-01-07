@@ -1,7 +1,7 @@
 ---
 title: "使用 hugo 白嫖 Github 资源搭建 Github-like 的个人博客"
 date: 2024-12-24T11:27:22+08:00
-draft: false
+draft: true
 author: "acyanbird"
 summary: "我真的是个小白白白"
 # tags: [""]

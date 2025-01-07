@@ -1,9 +1,9 @@
 ---
-title: "为什么要白嫖blog"
+title: "Hugo with GitHub-style 主题的搭建并使用"
 date: 2024-12-22T22:25:59+08:00
 draft: false
 author: "acyanbird"
-summary: "白嫖GitHub与使用VPS的利弊，以及如何搭建"
+summary: "如何搭建并使用 hugo with github style"
 tags: ["blog"]
 ---
 
@@ -18,6 +18,17 @@ tags: ["blog"]
 可以查看这个[示例配置](https://github.com/acyanbird/acyanbird.github.io)，不过具体配置都在下面贴的很清楚啦！要是有什么结构问题再来看看这个示例站点吧~
 
 ### 太长不看快速上手版
+确保你安装了最新的 hugo with extended，配置好 git，新建了 <用户名>.github.io 仓库（比如我的是 acyanbird.github.io）在setting 里面配置 pages - source - github actions。点击进入[仓库](https://github.com/acyanbird/acyanbird.github.io)，请使用命令 `git@github.com:acyanbird/acyanbird.github.io.git` 不要使用 ZIP，这样无法加载 submodule 会导致错误
+可以将进入这个目录（比如你重命名为了my-blog），那么在my-blog下面打开终端，输入
+```bash
+rm -rf .git
+git init
+git add .
+git commit -m "init"
+git branch -M main
+git remote add origin 你的 URL
+git push -u origin main
+```
 
 ### 搭建站点
 按照官方教程的 [quickstart](https://gohugo.io/getting-started/quick-start/)，首先确认安装了 git 和 hugo，hugo 的话最好在 [GitHub release](https://github.com/gohugoio/hugo/releases) 安装最新的 with extended 版本，包管理器安装的也许会过老。  
@@ -144,10 +155,11 @@ summary: "{{ replace .Name "-" " " | title }}"
 ctrl+k 再+v 可以分屏预览  
 ![alt text](image-5.png)  
 Readme 文档的写作格式网上有很多资料，也比较方便入门，在此就不赘述啦！  
-写完之后直接一个 `git add . && git commit -m "更新笔记" && git push` 走起~
+写完之后直接一个 `git add . && git commit -m "更新笔记" && git push` 走起~  
+目前问题：似乎 last mod 功能消失了，到时候找找是哪里出问题（）
 
 ### 上线博客
-我们使用 github Page 服务进行托管，这个主题目前（可能我会修咕咕咕）有个问题，不支持在有子目录的情况下显示头像图片。所以我们需要使用 <用户名>.github.io 的repo。创建这个名字的repo名称，添加这个 repo。
+我们使用 github Page 服务进行托管，这个主题目前（可能我会修咕咕咕）有个问题，不支持在有子目录的情况下显示头像图片。所以我们需要使用 <用户名>.github.io 的repo。创建这个名字的repo名称，添加这个 repo。就比如我的GitHub ID 是 acyanbird，所以我的 repo 名是 acyanbird.github.io
 ```bash
 git init
 git add .
