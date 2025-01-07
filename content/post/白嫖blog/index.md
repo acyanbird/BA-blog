@@ -7,6 +7,17 @@ summary: "如何搭建并使用 hugo with github style"
 tags: ["blog"]
 ---
 
+- [事先声明：](#事先声明)
+  - [仅供参考](#仅供参考)
+  - [太长不看快速上手版](#太长不看快速上手版)
+  - [搭建站点](#搭建站点)
+  - [添加主题](#添加主题)
+  - [添加 post](#添加-post)
+  - [上线博客](#上线博客)
+  - [个性化域名\&墙内访问](#个性化域名墙内访问)
+  - [enable 评论](#enable-评论)
+
+
 ## 事先声明：
 作为 blog 搭建……大概5代目，自己搭建的WordPress，白嫖的hexo，CSDN，飞书，或者直接typora 本地存盘都有过。不过可持续性非常烂，导致那么多年基本上没什么存档下来 :sob:  
 
@@ -29,6 +40,8 @@ git branch -M main
 git remote add origin 你的 URL
 git push -u origin main
 ```
+之后应该能看到上线啦！![alt text](image-8.png)
+如果因为忘记设置 source - github actions，也可以设置完后手动 re-run 失败的action，在主页点击叉叉，然后右上角 re-run 就好！之后请到添加 post 章节查看怎么写 blog！
 
 ### 搭建站点
 按照官方教程的 [quickstart](https://gohugo.io/getting-started/quick-start/)，首先确认安装了 git 和 hugo，hugo 的话最好在 [GitHub release](https://github.com/gohugoio/hugo/releases) 安装最新的 with extended 版本，包管理器安装的也许会过老。  
@@ -148,7 +161,7 @@ summary: "{{ replace .Name "-" " " | title }}"
 ```
 
 ### 添加 post
-由于我们使用了 archetype，所以可以用 `hugo new post/[你的题目] --kind git` 初始化一个blog，这样之后的图片放在这个文件夹下就可以啦~  
+由于我们使用了 archetype，所以可以用 `hugo new post/[你的题目] --kind git` 初始化一个blog，这样之后的图片放在这个文件夹下就可以啦~  至于首页的显示也是md文档，请在 content 目录下面新建 readme.md 文档，在里面编辑就可以。  
 在我个人感觉里，有一个能够方便进行写作的工具是很重要的，今天在这里推荐 VS Code 加上几个插件：  
 **Markdown Shotcuts** 此插件主要是提供了粗体、斜体、行内代码、代码块的快捷键。    
 **Markdown Paste** 此插件主要是提供了直接向 md文章里贴图的功能。  
