@@ -30,4 +30,4 @@ sudo make install
 ```
  —— 然后子模块初始化失败，单独 clone 之后进行安装，分别是 [librime](https://github.com/rime/librime/tree/7d9ad77fb5e8e6e330925de5e09c6ecfc2d2f4fd) 和 [plum](https://github.com/rime/plum/tree/ff888cbb9fce8c3f5b8b355baeb10685b2052b43) 后面那个是安装 recipe 的东西，进入目录执行 `make && sudo make install`
 
-这俩都依赖 boost 啊…… 在这里是 boost-default
+这俩都依赖 boost 啊…… 在这里是 libboost-all-dev, libgoogle-glog-dev, libgtest-dev, libyaml-cpp-dev, libleveldb-dev, libmarisa-dev, libopencc-dev

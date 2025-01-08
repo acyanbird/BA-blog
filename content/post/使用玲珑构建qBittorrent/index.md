@@ -34,3 +34,13 @@ summary: "使用玲珑构建qBittorrent"
       * Used by the bundled search engine
 ```
 可以通过 `dpkg -l | grep <包名>`检索一下是否安装（然后发现有一大堆没有安装）ummmm那先开始好了。先更新一下软件包罢……  
+然后把 boost 装好就可以，我这里安装的是 libboost-all-dev 
+首先安装 [libtorrent](https://github.com/arvidn/libtorrent) 
+```
+cmake -DCMAKE_BUILD_TYPE=Release\
+-DCMAKE_INSTALL_PREFIX=$PREFIX ..
+make -j$(nproc)
+sudo make install
+```
+这样就安装好了 libtorrent。  
+之后构建 qBittorrent，安装 libssl-dev, qt6-base-dev, qt6-svg-dev,qt6-tools-dev, libxkbcommon-dev, qt6-base-private-dev
