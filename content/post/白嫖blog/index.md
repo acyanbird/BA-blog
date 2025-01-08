@@ -14,7 +14,7 @@ tags: ["blog"]
   - [添加主题](#添加主题)
   - [添加 post](#添加-post)
   - [上线博客](#上线博客)
-  - [个性化域名\&墙内访问](#个性化域名墙内访问)
+  - [私人域名\&墙内访问](#私人域名墙内访问)
   - [enable 评论](#enable-评论)
 
 
@@ -41,7 +41,7 @@ git remote add origin 你的 URL
 git push -u origin main
 ```
 之后应该能看到上线啦！![alt text](image-8.png)
-如果因为忘记设置 source - github actions，也可以设置完后手动 re-run 失败的action，在主页点击叉叉，然后右上角 re-run 就好！之后请到添加 post 章节查看怎么写 blog！
+如果因为忘记设置 source - github actions，也可以设置完后手动 re-run 失败的action，在主页点击叉叉，然后右上角 re-run 就好！之后请到[添加 post 章节](https://acyanbird.tech/post/%E7%99%BD%E5%AB%96blog/#%E6%B7%BB%E5%8A%A0-post)查看怎么写 blog！
 
 ### 搭建站点
 按照官方教程的 [quickstart](https://gohugo.io/getting-started/quick-start/)，首先确认安装了 git 和 hugo，hugo 的话最好在 [GitHub release](https://github.com/gohugoio/hugo/releases) 安装最新的 with extended 版本，包管理器安装的也许会过老。  
@@ -62,6 +62,7 @@ hugo server
 ![alt text](image-3.png)
 ![alt text](image-2.png)
 到此就算是测试完毕，接下来我们接入 GitHub 主题
+
 ### 添加主题
 大家不一定要使用我选择的主题，可以在[官网](https://themes.gohugo.io/)搜索自己想要的主题进行添加，但注意每个主题的配置都各不相同，这一段只对 [github-style](https://github.com/MeiK2333/github-style) 这个 theme 有效。直接添加主题 `git submodule add git@github.com:MeiK2333/github-style.git themes/github-style` 作者是给了一份配置参考，当然我也进行了一些修改，大家可以照抄我的配置，启用了本地搜索功能
 
@@ -163,8 +164,10 @@ summary: "{{ replace .Name "-" " " | title }}"
 ### 添加 post
 由于我们使用了 archetype，所以可以用 `hugo new post/[你的题目] --kind git` 初始化一个blog，这样之后的图片放在这个文件夹下就可以啦~  至于首页的显示也是md文档，请在 content 目录下面新建 readme.md 文档，在里面编辑就可以。  
 在我个人感觉里，有一个能够方便进行写作的工具是很重要的，今天在这里推荐 VS Code 加上几个插件：  
-**Markdown Shotcuts** 此插件主要是提供了粗体、斜体、行内代码、代码块的快捷键。    
-**Markdown Paste** 此插件主要是提供了直接向 md文章里贴图的功能。  
+**Markdown Shortcuts** 此插件主要是提供了粗体、斜体、行内代码、代码块的快捷键。    
+**Markdown All in One** 哎呀看这个名字就知道，全家桶，装就完事了！  
+要达成的效果就是可以直接截图粘贴到 blog 里面，不需要再传一次啦！
+  
 ctrl+k 再+v 可以分屏预览  
 ![alt text](image-5.png)  
 Readme 文档的写作格式网上有很多资料，也比较方便入门，在此就不赘述啦！  
@@ -182,7 +185,7 @@ git remote add origin 你的URL
 git push -u origin main
 ```
 之后启动 GitHub Page，这里[官方文档](https://gohugo.io/hosting-and-deployment/hosting-on-github/)写的很清楚了，setting - pages 
-![alt text](image-6.png)
+![alt text](image-6.png)  
 在根目录创建 .github/workflows 文件夹，创建 hugo.yaml
 ```bash
 mkdir -p .github/workflows
@@ -269,8 +272,9 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 ```
-**顺手优化**： 这个选做，这样发布是不需要 public 文件夹的，我们可以让git忽略这个文件夹，来加快每次上传的速度。在根目录下创建 .gitignore 文件，加入 public/ ，如果之前 add 过这个文件夹那么在根目录下 `git rm -r --cached public`，再提交（git add . && git commit -m "commit message"）  
+**顺手优化**： 这个选做，这样发布是不需要 public 文件夹的，我们可以让git忽略这个文件夹，来加快每次上传的速度。在根目录下创建 .gitignore 文件，加入 public/ ，如果之前 add 过这个文件夹那么在根目录下 `git rm -r --cached public`，再提交（`git add . && git commit -m "commit message"`）  
 到此你的 blog 已经可以上线并访问啦！耶！不过还有能够改进的地方，如果还有兴趣就向下看看吧~
-### 个性化域名&墙内访问
+### 私人域名&墙内访问
+目前的 github.io 网站被墙屏蔽，我使用的是私人域名+Cloudflare来配置。
 ### enable 评论
 这个主题适配了 [gitalk](https://github.com/gitalk/gitalk) 组建，所以就使用这个啦~ 因为需要 callback URL 所以需要上线之后才能使用。
