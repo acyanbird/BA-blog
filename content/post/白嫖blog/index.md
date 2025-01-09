@@ -7,6 +7,9 @@ summary: "如何搭建并使用 hugo with github style"
 tags: ["blog"]
 ---
 
+#### 关于配置
+查看[这个 repo](https://github.com/acyanbird/blog-example)来参考里面的 `hugo.toml` 进行配置。
+
 - [事先声明：](#事先声明)
   - [仅供参考](#仅供参考)
   - [太长不看快速上手版](#太长不看快速上手版)
@@ -16,6 +19,7 @@ tags: ["blog"]
   - [上线博客](#上线博客)
   - [私人域名\&墙内访问](#私人域名墙内访问)
   - [enable 评论](#enable-评论)
+    - [差不多这样了](#差不多这样了)
 
 
 ## 事先声明：
@@ -283,5 +287,24 @@ jobs:
 
 ### enable 评论
 这个主题适配了 [gitalk](https://github.com/gitalk/gitalk) 组建，所以就使用这个啦~ 因为需要 callback URL 所以需要上线之后才能使用。进入到 Github 的 [Setting - Developer setting - OAuth Apps](https://github.com/settings/apps)
-![alt text](image-10.png)
-记得新建一个公开的 repo 存储 issue，因为 gitalk 使用 issue 来存储
+![alt text](image-10.png)  
+记得新建一个公开的 repo 存储 issue，因为 gitalk 使用 issue 来存储。这里注意把你的域名写在 callback URL 里，如果你是免费的域名就是 <你的ID>.github.io  
+![alt text](image-11.png)  之后在 `hugo.toml` 里取消注释 
+```toml
+  [params.gitalk]
+    clientID = 
+    clientSecret = 
+    repo = "存放评论的 repo 名"
+    owner = "你的GitHub ID"
+    admin = "你的GitHub ID"
+    id = "decodeURI(location.pathname)"# 注意这个，可能会出现超长 label 导致 invalid 
+    labels = "gitalk"
+    perPage = 15
+    pagerDirection = "last"
+    createIssueManually = false
+    distractionFreeMode = false
+```
+之后在每个 post 下面就有评论区，等待初始化就可以了~如果要管理评论，进入到填写的 github repo 的 issue 区删除就 OK。
+
+#### 差不多这样了
+差不多就是这样了，如果有问题欢迎在评论区找我qwq
