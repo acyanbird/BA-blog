@@ -275,6 +275,9 @@ jobs:
 **顺手优化**： 这个选做，这样发布是不需要 public 文件夹的，我们可以让git忽略这个文件夹，来加快每次上传的速度。在根目录下创建 .gitignore 文件，加入 public/ ，如果之前 add 过这个文件夹那么在根目录下 `git rm -r --cached public`，再提交（`git add . && git commit -m "commit message"`）  
 到此你的 blog 已经可以上线并访问啦！耶！不过还有能够改进的地方，如果还有兴趣就向下看看吧~
 ### 私人域名&墙内访问
-目前的 github.io 网站被墙屏蔽，我使用的是私人域名+Cloudflare来配置。
+目前的 github.io 网站被墙屏蔽，我使用的是私人域名+Cloudflare来配置。在你喜欢的域名提供商（国内的比较麻烦，推荐国外），或者直接用 [GitHub 学生认证](https://github.com/JimmyLing233/Github-Student-Certification-Guide)赠送的来白嫖一个。然后在你的 GitHub 个人 setting - pages 里面认证（如果不验证也可以，但是会不能使用 https）之后会有详细步骤（就是添加 txt 认证什么的），再到你个人repo里把域名进行更改为你想要的，可以是我这种 acyanbird.tech 也可以是子域名，详情参考[文档](https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)。  
+之后再添加其他的 DNS 解析，如果是子域名（比如 blog.acyanbird.tech），那么进行 CNAME 记录，值为 acyanbird.github.io  
+![alt text](image-9.png)  
+在验证 DNS 的时候要记得把代理状态取消！橙色的云变灰之后才能验证，不然会出现 https 验证失败。
 ### enable 评论
 这个主题适配了 [gitalk](https://github.com/gitalk/gitalk) 组建，所以就使用这个啦~ 因为需要 callback URL 所以需要上线之后才能使用。
