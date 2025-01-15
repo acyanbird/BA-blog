@@ -22,4 +22,17 @@ ummmm 看到 [proposal](https://www.debian.org/devel/wnpp/being_packaged) 这里
 ```
 首先要保证这个包最后包含版本号（不允许下划线），然后制作 tar.gz 包（反正是展开的的压缩包都需要有啦），之后进入目录执行 `debmake -x1`
 
-ibncurses-dev debuild dpkg-buildpackage -b
+ `debuild dpkg-buildpackage -b`
+这是比较宽松的打包法则，不被Debian限制嗯……
+
+ [前后的script](https://www.debian.org/doc/debian-policy/ch-maintainerscripts.html)
+### 去提问的地方
+在 [help resources](https://www.debian.org/doc/manuals/debmake-doc/ch03.en.html#help) 这里
+
+### 查找依赖
+生成了 deb 包之后，使用 `dpkg -f 2048-in-terminal_0.0-1_amd64.deb pre-depends depends recommends conflicts breaks` 这个命令查找，把 deb 换成对应的包名，在 control 的 depend 下更新一下
+
+### 更新 Copyright
+这个可以先不管……
+
+好像 quilt 不知道怎么做？反正 install 是之前的，remove 应该也有 script postrm
