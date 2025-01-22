@@ -36,3 +36,17 @@ ummmm 看到 [proposal](https://www.debian.org/devel/wnpp/being_packaged) 这里
 这个可以先不管……
 
 好像 quilt 不知道怎么做？反正 install 是之前的，remove 应该也有 script postrm
+
+### 移除软件
+除了 install 之后要进行 postrm，在 remove 之前进行的，反正我叫 ChatGPT 生成一下~
+
+```
+#!/bin/sh
+set -e
+
+# Commands to run after the package is removed
+echo "Running postrm script for 2048-in-terminal"
+rm -f /usr/games/2048-in-terminal
+
+exit 0
+```
