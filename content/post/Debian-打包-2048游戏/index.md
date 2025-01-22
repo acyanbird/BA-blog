@@ -1,7 +1,7 @@
 ---
 title: "Debian 打包 2048游戏"
 date: 2025-01-13T23:14:48+08:00
-draft: true
+draft: false
 author: "acyanbird"
 summary: "Debian 打包 2048游戏"
 # tags: [""]

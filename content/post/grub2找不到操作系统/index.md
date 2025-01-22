@@ -1,7 +1,7 @@
 ---
 title: "Grub2找不到操作系统"
 date: 2025-01-15T17:12:40+08:00
-draft: false
+draft: true
 author: "acyanbird"
 summary: "Grub2找不到操作系统"
 # tags: [""]
