@@ -200,3 +200,49 @@ impl LiveRegister for App {
 app_main!(App); // 定义应用程序的入口点
 ```
 这样就可以，更加有条理的运行。看这两个例子都用了 root，然后是 Window 组件！
+
+### 分析 robrix
+每一个组件都有 draw_bg
+login 是单独出来的可以先看看这个……但是没法退出了！RobrixTextInput 是自定义组件，继承自 TextInput（反正没法输入中文还是上游的锅）  
+
+- RobrixTextInput 对，上游的textinput也无法输入中文……来自 shared/styles.rs 稍微猜猜看，可能是没有 IME 支持？可惜以前没有研究过太多，总之是对于生成的，可以输入文字的框，颜色大小进行define
+- RobrixIconButton 继承自 Button - IconButton shared/icon_button.rs 更改了一些颜色和布局，更适合 UI
+- SsoButton 封装 SsoImage 的，可以点击，手势是爪子
+```rust
+SsoButton = <RoundedView> {
+        width: Fit,
+        height: Fit,
+        cursor: Hand,
+        visible: true,
+        padding: 10,//按钮内容与按钮边框之间会有 10 像素的间距。
+        // margin: 10,
+        margin: { left: 16.6, right: 16.6, top: 10, bottom: 10}
+        draw_bg: {
+            border_width: 0.5,
+            border_color: (#6c6c6c),
+            color: (COLOR_PRIMARY)
+        }
+    }
+```
+- SsoImage 继承 Image,也是限定了大小布局（应该换个更加高清的 png 图片的）和 SsoButton 一起结合起来使用
+```rust
+facebook_button = <SsoButton> {
+                            image = <SsoImage> {
+                                source: dep("crate://self/resources/img/facebook.png")
+                            }
+                        }
+```
+像这样
+
+
+### robrix bug 记录
+一边学习一边找到bug  
+首先是图标的分辨率不够，sso我记得有 svg 版本？就算没有也可以找清楚一点的。robrix logo应该可以做 svg，看看难度  
+聊天的时候点击其他人图片可以显示，但是没法退出了，摁叉叉没用要 ESC 
+![alt text](image-1.png)  
+自己的图像变形了! 反正 cinny 那边是没问题的
+
+单独聊天可以关闭，集体聊天点击会直接蹦跶出 reply 没法关闭……应该是 reply 这个占据太多了！所以导致查看界面这里被遮盖了？
+
+![alt text](image-2.png)  
+是的，就是因为 reply 的逻辑优先（？） 在看 profile 上，所以没法正常关闭 —— 可能的解决方法，把 reply 的摁左键变成摁右键，这样就不冲突了！
