@@ -202,6 +202,9 @@ app_main!(App); // 定义应用程序的入口点
 这样就可以，更加有条理的运行。看这两个例子都用了 root，然后是 Window 组件！
 
 ### 分析 robrix
+分割符们~
+- Divider FillerX FillerY LineH 都在 helpers.rs 里面，尝试了 Divider，和 md 的分隔符类似？
+- 
 每一个组件都有 draw_bg
 login 是单独出来的可以先看看这个……但是没法退出了！RobrixTextInput 是自定义组件，继承自 TextInput（反正没法输入中文还是上游的锅）  
 
@@ -232,8 +235,9 @@ facebook_button = <SsoButton> {
                             }
                         }
 ```
-像这样
-
+像这样  
+然后是 welcome screen
+- MessageHtml html_or_plaintext.rs 继承自 HTML 标签，对于 HTML 的行为进行了定义？
 
 ### robrix bug 记录
 一边学习一边找到bug  
@@ -246,3 +250,13 @@ facebook_button = <SsoButton> {
 
 ![alt text](image-2.png)  
 是的，就是因为 reply 的逻辑优先（？） 在看 profile 上，所以没法正常关闭 —— 可能的解决方法，把 reply 的摁左键变成摁右键，这样就不冲突了！
+
+登录的时候点击 cancel 是被禁止的？不太清楚状态机的循环……
+![alt text](image-3.png)  
+啊这里没有截图到鼠标，反正是 cancel 没法点击
+
+dock 这里没法显示图标，不过makepad也没有……不知道是否是功能未实装？  
+发送信息直接enter发送，而不是需要再次点击图标。  
+目前 unread room 看起来没法在 Linux 重现，再搭建一下测试……
+
+### 打包测试
