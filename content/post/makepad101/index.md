@@ -258,5 +258,9 @@ facebook_button = <SsoButton> {
 dock 这里没法显示图标，不过makepad也没有……不知道是否是功能未实装？  
 发送信息直接enter发送，而不是需要再次点击图标。  
 目前 unread room 看起来没法在 Linux 重现，再搭建一下测试……
+要把问题整理到 issue 里面先……我自己的repo里 qwq
+
+结果更清晰的图片没有带来更清晰的展现……可能和本身的 Image 有关？ btw 这里不欢迎 svg
 
 ### 打包测试
+不成功！
