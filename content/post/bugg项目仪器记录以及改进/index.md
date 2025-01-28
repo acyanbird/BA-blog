@@ -19,3 +19,19 @@ summary: "Bugg项目仪器记录以及改进"
 在此之前也有一个 [solo](https://solo-system.github.io/home.html) d £120 (including a 5-day battery, memory card and a really good microphone). The cost without battery and memory card is £83 (for comparison with commercial systems) 5天电池续航？
 
 bugg 本身不提供供电选项，推荐亲亲购买额外电池或者太阳能板子（不要啊）（话说车载电池多少钱来着）
+
+所以 bugg 系统总体续航未声明，单价80美刀这样？
+### bugg参数
+
+
+[开源声学网站集合](https://pmc.ncbi.nlm.nih.gov/articles/PMC7682500/) https://ecosound-web.de/ecosound_web/  
+
+突破方向大概是可以deliver的低成本，并且有平台支持的处理？顺便可以在为标记地区比如中国使用？  
+
+毕竟我之前写了希望开发观鸟工具，所以采取低成本的后院录音模块（可以对比一下康奈尔的照相喂鸟器？），用来采集叫声。然后通过拉通当地观鸟人，让他们帮助标记鸟叫来采集数据
+
+[bird weather](https://app.birdweather.com/)  希望帮助构建的是这个！ 
+
+先 focus on，低成本开源硬件的生态检测工具，有 live streaming 功能，可以自建后端或者使用其他的后端比如 birdweather，采集数据。可以接其他传感器记录温度，风速等气候数据
+
+esp8266或8285 rp2040 通讯模组 RedCap模组 RG255AA
