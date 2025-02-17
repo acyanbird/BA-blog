@@ -49,7 +49,7 @@ esp8266或8285 rp2040 通讯模组 RedCap模组 RG255AA
 
 查看一下树莓派车载电池能否运行更好的，好的mic更好的收音设备，前面是要进行硬件改良。 
 
-在后端做对前端进行粗略打包的声音分析的AI，开放有意义的片段给大家打标记（citizen science），用这个东西继续训练 AI。目前前端用的是 CNN，改进一下针对这个进行分类。  
+在后端做对前端进行粗略打包的声音分析的AI，开放有意义的片段给大家打标记（particpatory science），用这个东西继续训练 AI。目前前端用的是 CNN，改进一下针对这个进行分类。  
 
 ### 改进方案
 希望基于目前的方案进行改进，因为如果部署在野外传输的难度比较大，基于树莓派的过剩性能可以在本地端先跑一次上面提到的AI，首先剥离有用（比如噪音和生物活动声音）上传，剩下的可以本地压缩。之后在服务器端再用更好的AI方法实现进一步的分类，例如这是什么噪音和物种分类等。之后把生物叫声筛选出来之后，如果没有充足数据可以制作网站，让大家进行声音的标注区分，用来更好地训练模型！  
@@ -57,7 +57,7 @@ esp8266或8285 rp2040 通讯模组 RedCap模组 RG255AA
 
 声学收音 MB sonics ambisonics，要多加麦克风，高保真收集声音，声音的指向性。麦克风阵列（计算机算法），能耗（！）。voice activity detection! 当前是人声还是不是人声。Knowles V2S200D  
 
-麦克风更换成 [DIGITAL VOICE VIBRATION SENSOR ](https://www.mouser.kr/new/knowles/knowles-v2s200d-vibration-sensor/?srsltid=AfmBOooSEIcMSHdyFRiMxzyZ-H5t-RCfPZ6MWCfXuNqJub7qx5ovuU9v)   [下一个演示视频](https://www.youtube.com/watch?v=IdgiYgTGjPw)没有声孔，无惧防水！为了指向性问题。mems 麦克风。
+麦克风更换成 [DIGITAL VOICE VIBRATION SENSOR](https://www.mouser.kr/new/knowles/knowles-v2s200d-vibration-sensor/?srsltid=AfmBOooSEIcMSHdyFRiMxzyZ-H5t-RCfPZ6MWCfXuNqJub7qx5ovuU9v)   [下一个演示视频](https://www.youtube.com/watch?v=IdgiYgTGjPw)没有声孔，无惧防水！为了指向性问题。mems 麦克风。
 
 ### 需要更换
 麦克风以及收音（测试什么声音更好），可以把 MEMS sound wave pass through the hole, so ther is Acoustic membrane prevent water come in, but also decrease sensitivity. or increase robustness.   
