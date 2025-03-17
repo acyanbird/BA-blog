@@ -56,3 +56,36 @@ conda install -y -c conda-forge "opencv>=4.10.0"
 
 总结一下软件，无论用什么方法设置好 miniconda （以及不要让他每次都自动启动），安装依赖，如果不行关闭 ssl 验证，Debian 12 可能需要额外安装 `conda install -c conda-forge jpeg libtiff`  
 
+![alt text](image.png)
+
+注意一下如果 mime 无法播放就关闭硬件加速。
+
+### 组装
+这次测试了一下 follower arm 没有问题，组装一下 leader arm 在 Linux 系统里面为了不要每次 chmod 666，将当前用户加入 dialout `sudo usermod -aG dialout $USER`
+
+然后连接每一个 motor，我是
+```bash
+python lerobot/scripts/configure_motor.py \
+  --port /dev/ttyACM0 \
+  --brand feetech \
+  --model sts3215 \
+  --baudrate 1000000 \
+  --ID 1
+```
+注意不用扭上 horn，直接一个个标注好（记得标号）就可以开始拼装了。不过请拿个label，程序是按照 motor 上的 ID 控制的，如果装错了只能重来
+
+### 开始拼装
+**推荐先通读文字和视频，这两个都包含一部分重要信息。特别注意根据图片安装线的左右免得要重装**
+
+**先装从臂（因为不用修改电机，有钳子的那个）再改主臂，这样不用改电机**  
+除了使用 M2 * 5 的螺丝，注意不要把电机的螺丝拧下来装了（捂脸）  
+
+在第五步使用两个螺丝从侧面打的时候，可以选用 M2 6 然后狠狠地打进去，需要打掉一点部件才能比较好的 fit in  
+
+把 motor horn 先摁在电机上再打螺丝，注意孔洞位置。可以旋转一下arm把孔洞露出来，就能把螺丝打进去了。
+
+![alt text](image-1.png)
+
+装3 号电机的时候记得先插线
+### 小 tips
+有304纯色螺丝钉优先使用，黑色没有这个好，如果有内六角也优先使用，不容易滑丝
