@@ -78,6 +78,7 @@ python lerobot/scripts/configure_motor.py \
 **推荐先通读文字和视频，这两个都包含一部分重要信息。特别注意根据图片安装线的左右免得要重装**
 
 **先装从臂（因为不用修改电机，有钳子的那个）再改主臂，这样不用改电机**  
+
 除了使用 M2 * 5 的螺丝，注意不要把电机的螺丝拧下来装了（捂脸）  
 
 在第五步使用两个螺丝从侧面打的时候，可以选用 M2 6 然后狠狠地打进去，需要打掉一点部件才能比较好的 fit in  
@@ -86,6 +87,28 @@ python lerobot/scripts/configure_motor.py \
 
 ![alt text](image-1.png)
 
-装3 号电机的时候记得先插线
+装3 号电机的时候记得先插线。
+
+
 ### 小 tips
-有304纯色螺丝钉优先使用，黑色没有这个好，如果有内六角也优先使用，不容易滑丝
+有304纯色螺丝钉优先使用，黑色没有这个好，如果有内六角也优先使用，不容易滑丝。不过这个机子打印孔还是适合黑色的螺丝
+
+### 手动校准
+
+校准从臂
+```bash
+python lerobot/scripts/control_robot.py \
+  --robot.type=so100 \
+  --robot.cameras='{}' \
+  --control.type=calibrate \
+  --control.arms='["main_follower"]'
+```
+
+校准主臂
+```bash
+python lerobot/scripts/control_robot.py \
+  --robot.type=so100 \
+  --robot.cameras='{}' \
+  --control.type=calibrate \
+  --control.arms='["main_leader"]'
+```
