@@ -8,6 +8,7 @@ tags: ["清华实习","具身"]
 ---
 
 跑通这里给的 example，注意一下 clone 需要 [git-lfs](https://git-lfs.com/) 不然大文件无法下载，不知道 macos 和 window 是否有不同。
+ seeed也有不错的[文档](https://wiki.seeedstudio.com/cn/lerobot_so100m/#%E6%A0%A1%E5%87%86%E6%9C%BA%E6%A2%B0%E8%87%82)
 
 ### 安装环境
 安装之后记住默认安装路径，在默认 activate 上面选择 否 （不然每一次都会开启，会拖慢打开 Terminal 的速度）
@@ -89,11 +90,15 @@ python lerobot/scripts/configure_motor.py \
 
 装3 号电机的时候记得先插线。
 
+**装主臂**
+把已经标记好的 ID 1-6 电机打开四个螺丝，拆掉一个齿轮再还原
+![alt text](image-2.png)
+
 
 ### 小 tips
 有304纯色螺丝钉优先使用，黑色没有这个好，如果有内六角也优先使用，不容易滑丝。不过这个机子打印孔还是适合黑色的螺丝
 
-### 手动校准
+### 组装完毕测试
 
 校准从臂
 ```bash
@@ -104,6 +109,9 @@ python lerobot/scripts/control_robot.py \
   --control.arms='["main_follower"]'
 ```
 
+![alt text](image-3.png)
+这个应该已经失效了不推荐使用，这个file来自 `lerobot/common/robot_devices/robots/` 可以通过call 里面的 `run_arm_auto_calibration_so100` 先活动一下手臂（
+
 校准主臂
 ```bash
 python lerobot/scripts/control_robot.py \
@@ -112,3 +120,5 @@ python lerobot/scripts/control_robot.py \
   --control.type=calibrate \
   --control.arms='["main_leader"]'
 ```
+
+`.cache/calibration/so100` 下面是校准文件，如果重新较重应该会直接覆写，或者你可以直接删除
