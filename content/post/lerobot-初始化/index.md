@@ -111,6 +111,7 @@ python lerobot/scripts/control_robot.py \
 
 ![alt text](image-3.png)
 这个应该已经失效了不推荐使用，这个file来自 `lerobot/common/robot_devices/robots/` 可以通过call 里面的 `run_arm_auto_calibration_so100` 先活动一下手臂（
+如果做到一半卡死了断电就可以了
 
 校准主臂
 ```bash
@@ -122,3 +123,8 @@ python lerobot/scripts/control_robot.py \
 ```
 
 `.cache/calibration/so100` 下面是校准文件，如果重新较重应该会直接覆写，或者你可以直接删除
+
+校准需要
+校准的基本思维是做出相同的动作，readme 里的三张图片不是很明显，可以通过视频解决。不过也不用很严格按照标准动作，只用保证两个机械臂是一致动作的就可以。第一张闭嘴，第二张嘴，第三张闭嘴。如果没有校准正确再来就可以。
+
+teleoperate 的时候如果动作太猛可能会失去连接，请重启（卡住了记得断电），如果一致显示 lose connect，检查是不是有线松了或者被崩断了。
