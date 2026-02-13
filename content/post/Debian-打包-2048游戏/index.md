@@ -50,3 +50,5 @@ rm -f /usr/games/2048-in-terminal
 
 exit 0
 ```
+
+update
